@@ -1,3 +1,25 @@
+## Table of Contents
+
+- [why?](#webRTC)
+- [webRTC Architecture - P2P](#webrtc-architecture---p2p)
+- [Signaling server](#signaling-server)
+- [Stun (Session Traversal Utilities for NAT)](#stun-session-traversal-utilities-for-nat)
+  - [NAT - Network Address Translation](#nat---network-address-translation)
+- [ICE (Interactive Connectivity Establishment) candidates](#ice-interactive-connectivity-establishment-candidates)
+- [TURN server](#turn-server)
+- [Offer](#offer)
+- [Answer](#answer)
+- [SDP (Session description protocol)](#sdp-session-description-protocol)
+- [RTCPeerConnection object in browser](#rtcpeerconnection-object-in-browser)
+- [Other Architectures and Scaling WebRTC](#other-architectures-and-scaling-webrtc)
+  - [Limitations of P2P Architecture](#limitations-of-p2p-architecture)
+  - [SFU (Selective Forwarding Unit)](#sfu-selective-forwarding-unit)
+  - [MCU (Multipoint control Unit)](#mcu-multipoint-control-unit)
+  - [Distributed SFU](#distributed-sfu)
+- [Adhoc](#adhoc)
+  - [Transcoding on the Fly](#transcoding-on-the-fly)
+  - [Is SFT a TURN server](#is-sft-a-turn-server)
+
 # webRTC
 
 why?
@@ -142,7 +164,7 @@ There are two other popular architectures for doing webRTC
 1. SFU
 2. MCU
 
-## [[SFU (Selective Forwarding Unit)]]
+## SFU (Selective Forwarding Unit)
 
 As the name suggest, its a system that takes in streams from multiple client and selectively forward the packets to other clients depending on some criteria
 
