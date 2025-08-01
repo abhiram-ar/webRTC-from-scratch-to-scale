@@ -9,7 +9,7 @@ why?
 > NOTE: cricket matches, Youtube live streaming does not use webRTC.
 > They use `HLS` - why because there 2-5 second delay is not a problem
 
-### webRTC Architecture - P2P
+## webRTC Architecture - P2P
 
 webRTC is a peer to peer protocol. That means that you can directly send your media over to other person without the need of a central server (but there is a catch)
 
@@ -21,7 +21,7 @@ webRTC is a peer to peer protocol. That means that you can directly send your me
 > **IP Leaks:**  
 > When peers connect directly, each peer's IP address is exposed to the other. This can result in user IP leakage.
 
-### Signaling server
+## Signaling server
 
 Both the browser need to exchange their address before they can start taking to each other. A signaling server is used for this purpose
 
@@ -30,9 +30,9 @@ Both the browser need to exchange their address before they can start taking to 
 - Initially info exchange is usually done through websocket connection, but can be anything(http)
 - One the IPs have been exchanged, we don't need the central server anymore. Communication can happen P2P
 
-### Stun (Session Traversal Utilities for NAT)
+## Stun (Session Traversal Utilities for NAT)
 
-#### NAT - Network Address Translation
+### NAT - Network Address Translation
 
 - There are limited IPs in the world (that's why we have common public IPs for hotels, hostels, college etc.)
 - Because of this webRTC discovery becomes difficult
@@ -43,15 +43,15 @@ STUN solves the problem of webRTC discovery
 
 Google has a free STUN server : [link](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/) - useful for debugging webRTC peers
 
-### ICE (Interactive Connectivity Establishment) candidates
+## ICE (Interactive Connectivity Establishment) candidates
 
 - Bunch of `IP:Port` from which traffic can reach you over a network
 - IF two people try to connect to each other in a `hotel-Wifi`, they can connect via their private router ICE candidate
 - If two people from different countries are trying to connect to each other, they would connect using their public IPs
 
-### TURN server
+## TURN server
 
-- Depending upon the [[Types of NAT]] the strictness can vary,
+- Depending upon the Types of NAT the strictness can vary,
   i.e. can traffic to come from other places rather than from those client who opened a connection in NAT
 - When we get an IP from the STUN server, The browser sometimes expect the data to come from the STUN server and blocks the data coming from other browser
 
@@ -60,15 +60,15 @@ Google has a free STUN server : [link](https://webrtc.github.io/samples/src/cont
 - TURN server gives us extra ICE candidates
 - TURN is an optional fallback if we cannot directly connect (P2P), in such case the data will be routed trough the TURN server
 
-### Offer
+## Offer
 
 The process of first browser (the one initiating connection) sending their ICE candidates to the other side
 
-### Answer
+## Answer
 
 The other side returning their ICE candidates is called the answer
 
-### SDP (Session description protocol)
+## SDP (Session description protocol)
 
 A single file that contains all your,
 
@@ -78,7 +78,9 @@ A single file that contains all your,
 This is the file that is send in the `Offer` and `Answer`
 <img src="./assets/SDP flow.png" alt="SDP flow"  />
 
-## RTCPeerConnection object in browser
+<br> <br>
+
+# RTCPeerConnection object in browser
 
 This object helps in establishing a webRTC connection and hides the protocol level implementation
 
