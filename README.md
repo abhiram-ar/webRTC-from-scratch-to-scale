@@ -52,7 +52,7 @@ Both the browser need to exchange their address before they can start taking to 
 - Initially info exchange is usually done through websocket connection, but can be anything(http)
 - One the IPs have been exchanged, we don't need the central server anymore. Communication can happen P2P
 
-## Stun (Session Traversal Utilities for NAT)
+## STUN (Session Traversal Utilities for NAT)
 
 ### NAT - Network Address Translation
 
