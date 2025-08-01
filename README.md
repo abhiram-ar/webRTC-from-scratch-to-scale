@@ -1,6 +1,7 @@
 # webRTC
 
 why?
+
 - webRTC is the core/only protocol that lets you do real-time media communication from inside a browser
 - sub-second latency
 - 30FPS games
@@ -31,15 +32,16 @@ Both the browser need to exchange their address before they can start taking to 
 
 ### Stun (Session Traversal Utilities for NAT)
 
-##### NAT - Network Address Translation
+#### NAT - Network Address Translation
 
 - There are limited IPs in the world (that's why we have common public IPs for hotels, hostels, college etc.)
 - Because of this webRTC discovery becomes difficult
   i.e. when peer-1 tries to connect to another peer-2, peer-1 sees the public IP peer-2 not the actual IP address of peer-2
 
 STUN solves the problem of webRTC discovery
-google has a free STUN server : [link](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/) - useful for debugging webRTC peers
 <img src="./assets/STUN servers.png" alt="STUN server architecture" style="width:" />
+
+Google has a free STUN server : [link](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/) - useful for debugging webRTC peers
 
 ### ICE (Interactive Connectivity Establishment) candidates
 
