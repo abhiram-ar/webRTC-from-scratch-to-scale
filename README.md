@@ -235,9 +235,9 @@ live streaming -> boadcasting to the world live
 
 ![cloud recording architecture](./assets/mcu%20mixer%20and%20streming%20application.png)
 
-- mixer mixed the stream and create a recording of the session
-- `RTMP` protocol is not any more used for delivery as it way used to deliver video to adobe flash. But it is widely used for video ingestion from source to server.
-- Form there we convert video to HLS segments, as it is HTTP friendly can can be cached in CND and distributed across the world easily
+- mixer mixes the stream and create a recording of the session
+- `RTMP` protocol is not anymore used for video delivery as it way used to deliver video to adobe flash. But it is widely used for video ingestion from source to streaming-server.
+- From there we convert video to HLS segments, as it is HTTP friendly can can be cached in CND and distributed across the world easily
 
 ## Distributed SFU
 
