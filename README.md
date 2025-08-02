@@ -246,7 +246,7 @@ Scaling conference to handle 1000+ participants
 
 ## Transcoding on the Fly
 
-How does platform like google meet and zoom change video quality when a user is pinned their video frame size is large compared to other participants
+How does platform like google meet and zoom change video quality when a user is pinned and their video frame size is large compared to other participants
 
 TLDR: `Simulcast`
 
