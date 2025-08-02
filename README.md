@@ -48,7 +48,7 @@ webRTC is a peer to peer protocol. That means that you can directly send your me
 
 Both the browser need to exchange their address before they can start taking to each other. A signaling server is used for this purpose
 
-<img src="./assets/signaling server architecture.png" alt="singling server architecture" style="width" />
+![Signaling server architecture](./assets/signaling%20server%20architecture.png)
 
 - Initially info exchange is usually done through websocket connection, but can be anything(http)
 - One the IPs have been exchanged, we don't need the central server anymore. Communication can happen P2P
@@ -63,7 +63,7 @@ Both the browser need to exchange their address before they can start taking to 
 
 STUN solves the problem of webRTC discovery
 
-<img src="./assets/STUN servers.png" alt="STUN server architecture" style="width:" />
+![STUN server architecture](./assets/STUN%20servers.png)
 
 Google has a free STUN server : [link](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/) - useful for debugging webRTC peers
 
@@ -79,7 +79,7 @@ Google has a free STUN server : [link](https://webrtc.github.io/samples/src/cont
   i.e. can traffic to come from other places rather than from those client who opened a connection in NAT
 - When we get an IP from the STUN server, The browser sometimes expect the data to come from the STUN server and blocks the data coming from other browser
 
-<img src="./assets/TURN server.png" alt="TURN server architecture" style="width" />
+![TURN server architecture](./assets/TURN%20server.png)
 
 - TURN server gives us extra ICE candidates
 - TURN is an optional fallback if we cannot directly connect (P2P), in such case the data will be routed trough the TURN server
@@ -101,7 +101,7 @@ A single file that contains all your,
 
 This is the file that is send in the `Offer` and `Answer`
 
-<img src="./assets/SDP flow.png" alt="SDP flow"  />
+![SDP flow](./assets/SDP%20flow.png)
 
 <br> <br>
 
@@ -157,7 +157,7 @@ To do video call
 - P2P architecture is best for 1-1 video call/interactions.
 - for a group call or interaction between `n` peers (`n > 2`). It has some bottlenecks
 
-  <img src="./assets/p2pMesh.png" alt="P2p mesh"  />
+  ![P2p mesh](./assets/p2pMesh.png)
 
 - Here a peer need to send the same stream to all other peers which will consume lot of network bandwidth and system resources on a peer.
 - For n peers a peed need to send (n-1) streams
@@ -171,7 +171,7 @@ There are two other popular architectures for doing webRTC
 
 As the name suggest, its a system that takes in streams from multiple client and selectively forward the packets to other clients depending on some criteria
 
-<img src="./assets/STU selective forwarding example.png" alt="sfu forwarding"  />
+![SFU selective forwarding example](./assets/STU%20selective%20forwarding%20example.png)
 
 - Lets assume all the browser in the above diagram are in a group call and brower-3 mutes browser-1
 - Here Browser-1 only send a single stream to the SFU server, which selectively forward that stream to other clients in the call
@@ -190,7 +190,7 @@ Limitations of SFU
 - we can paginate video
 - but we cannot paginate audio, we need to hear the person speaking even if they are not visible on the current page
 
-<img src="./assets/sfu limitaion.png" alt="sfu issue with audio"  />
+![SFU issue with audio](./assets/sfu%20limitaion.png)
 
 - if we forward all the audio streams to a client event if the speaking party is not visible on the screen, we will need to handle large number of audio streams and there would be cracking if the CPU is not able to handle it
 - and also this is resource intensive
@@ -206,7 +206,7 @@ stream -> decode_video/audio -> mix -> re-encode -> stream
 
 for encode/decode we can use `FFmpeg`
 
-<img src="./assets/mcu auidio mixing.png" alt="mcu audio mixing"  />
+![mcu audio mixing](./assets/mcu%20auidio%20mixing.png)
 
 problem:
 
@@ -233,7 +233,7 @@ fix:
 cloud recording -> meeting recording 
 live streaming -> boadcasting to the world live
 
-<img src="./assets/mcu mixer and streming application.png" alt="cloud recording architecture"  />
+![cloud recording architecture](./assets/mcu%20mixer%20and%20streming%20application.png)
 
 - mixer mixed the stream and create a recording of the session
 - `RTMP` protocol is not any more used for delivery as it way used to deliver video to adobe flash. But it is widely used for video ingestion from source to server.
@@ -243,7 +243,7 @@ live streaming -> boadcasting to the world live
 
 Scaling conference to handle 1000+ participants
 
-<img src="./assets/distributed SFU.png" alt="SDP flow"  />
+![Distributed SFU architecture](./assets/distributed%20SFU.png)
 
 - Architecture of platform like Unacademy where a class can have 1000+ students
 - Students many want to see the teacher stream and students can interact with teacher up on permission
@@ -256,7 +256,7 @@ How does platform like google meet and zoom change video quality when a user is 
 
 TLDR: `Simulcast`
 
-<img src="./assets/transcoding on the fly.png" alt="simulcast architecture"  />
+![Simulcast architecture](./assets/transcoding%20on%20the%20fly.png)
 
 - browser1 send multiple video streams of various quality to the SFU,
 - SFU selectively forward optimal stream to browser2 based on a state
@@ -276,4 +276,4 @@ short answer NO
 
 TURN server is required in case of a browser cannot directly communicate with SFU server
 
-<img src="./assets/SFU with TURN server.png" alt="SFU with turn"  />
+![SFU with TURN server](./assets/SFU%20with%20TURN%20server.png)
