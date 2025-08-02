@@ -159,8 +159,8 @@ To do video call
 
   <img src="./assets/p2pMesh.png" alt="P2p mesh"  />
 
-- Here we need to send the same stream to all other peers which will consume lot of network bandwidth and system resources on a peer
-- For n peers we need to send (n-1) streams
+- Here a peer need to send the same stream to all other peers which will consume lot of network bandwidth and system resources on a peer.
+- For n peers a peed need to send (n-1) streams
 
 There are two other popular architectures for doing webRTC
 
