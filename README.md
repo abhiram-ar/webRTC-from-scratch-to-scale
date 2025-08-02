@@ -147,7 +147,7 @@ To do video call
 - call `addTrack` on `pc`
 - this would trigger an `onTrack` callback on the other side
 
-# Other Architectures and Scaling WebRTC
+# Multi client Architectures and Scaling WebRTC
 
 **Limitations of P2P Architecture**
 
@@ -174,12 +174,12 @@ As the name suggest, its a system that takes in streams from multiple client and
 - Here Browser-1 only send a single stream to the SFU server, which selectively forward that stream to other clients in the call
 - This frees up browser-1 from the responsibility of sending the streams to all parties and frees up browser-3 from handing unwanted stream
 
-> [!NOTE] SFU only forwards packet - it does not decode them
+> SFU only forwards packet - it does not decode them
 
 We can use STU to,
 
 - Cut a video stream going to a client
-- Send optimal bitrate stream to a client ([[Simulcast]])
+- Send optimal bitrate stream to a client (Simulcast)
 - Receives video in a paginated manner
 
 Limitations of SFU
@@ -198,7 +198,7 @@ It mixes audio/video together on the server before forwarding it.
 This means it need to
 
 ```bash
-decode_video/audio -> mix -> re-encode
+stream -> decode_video/audio -> mix -> re-encode -> stream
 ```
 
 for encode/decode we can use `FFmpeg`
@@ -219,7 +219,7 @@ problem:
 - we forward the full mix to all users who are not the loudest speaker
 - we forward the partial mix excusing their own voice to the loudest speakers
 
-> [!NOTE] MCU is mostly used to merge audio and not video
+> MCU is mostly used to merge audio and not video
 >
 > - we don't want to send a pre-processed video stream with layout to the end user
 > - But incase of an audio we need to hear the person speaking even if they are not currently visible on the paginated video streams
