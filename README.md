@@ -15,7 +15,7 @@
   - [Limitations of P2P Architecture](#limitations-of-p2p-architecture)
   - [SFU (Selective Forwarding Unit)](#sfu-selective-forwarding-unit)
   - [MCU (Multipoint control Unit)](#mcu-multipoint-control-unit)
-  - [Cloud Recording and live streming (Hydrid architecture)](#cloud-recording-and-live-streming-hydrid-architecture)
+  - [Cloud Recording and live streaming (Hydrid architecture)](#cloud-recording-and-live-streaming-hydrid-architecture)
   - [Distributed SFU](#distributed-sfu)
 - [Adhoc](#adhoc)
   - [Transcoding on the Fly](#transcoding-on-the-fly)
@@ -229,7 +229,7 @@ fix:
 > - But incase of an audio we need to hear the person speaking even if they are not currently visible on the paginated video streams
 
 
-## Cloud Recording and live streming (hydrid architecture)
+## Cloud Recording and live streaming (hydrid architecture)
 cloud recording -> meeting recording 
 live streaming -> boadcasting to the world live
 
