@@ -19,7 +19,7 @@
   - [Distributed SFU](#distributed-sfu)
 - [Adhoc](#adhoc)
   - [Transcoding on the Fly](#transcoding-on-the-fly)
-  - [Is SFT a TURN server](#is-sft-a-turn-server)
+  - [Is SFU a TURN server](#is-sfu-a-turn-server)
 
 # webRTC
 
@@ -268,7 +268,7 @@ why not transcode on the SFU?
 - Instead we give the responsibility of sending transcoded stream to browser
 - And modern browsers can easily send multiple bitrate video for webRTC natively
 
-## Is SFT a TURN server
+## Is SFU a TURN server
 
 short answer NO
 - SFU runs application like mediasoup
