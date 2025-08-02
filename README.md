@@ -253,7 +253,7 @@ TLDR: `Simulcast`
 <img src="./assets/transcoding on the fly.png" alt="simulcast architecture"  />
 
 - browser1 send multiple video streams of various quality to the SFU,
-- SFU selectively forward optimal stream to browser2 based a state
+- SFU selectively forward optimal stream to browser2 based on a state
 
 why not transcode on the SFU?
 
@@ -265,8 +265,8 @@ why not transcode on the SFU?
 ## Is SFT a TURN server
 
 short answer NO
-SFU runs application like media soup
-TURN server uses turn protocol and runs something like `coTurn`
+- SFU runs application like mediasoup
+- TURN server uses turn protocol and runs something like `coTurn`
 
 TURN server is required in case of a browser cannot directly communicate with SFU server
 
