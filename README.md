@@ -229,7 +229,9 @@ Applications
 
 - cloud recording - meeting recording
 - Mixing streams and live
-  ![[cloud recording and live streming architecture using SFU and mixer|1024]]
+
+<img src="./assets/mcu mixer and streming application.png" alt="cloud recording architecture"  />
+
 - mixer mixed the stream and create a recording of the session
 - `RTMP` protocol is not any more used for delivery as it way used to deliver video to adobe flash. But it is widely used for video ingestion from source to server.
 - Form there we convert video to HLS segments, as it is HTTP friendly can can be cached in CND and distributed across the world easily
