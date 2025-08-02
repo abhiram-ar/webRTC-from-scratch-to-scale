@@ -209,7 +209,8 @@ problem:
 
 - If I am speaking and get back the merged audio with my audio in it, there could be a echo feeling
 - there can be a cracking sound if we mix all the audio streams - because of noise and how it adds up
-  fix:
+
+fix:
 - So we limit the mix to have 3 loudest audio,
 - And we create 4 version of the mix,
   1.  audio mix of all 3 person speaking
