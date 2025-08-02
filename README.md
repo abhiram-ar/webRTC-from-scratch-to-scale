@@ -230,8 +230,8 @@ fix:
 
 
 ## Cloud Recording and live streaming (hydrid architecture)
-cloud recording -> meeting recording 
-live streaming -> boadcasting to the world live
+- cloud recording -> meeting recording 
+- live streaming -> boadcasting to the world live
 
 ![cloud recording architecture](./assets/mcu%20mixer%20and%20streming%20application.png)
 
