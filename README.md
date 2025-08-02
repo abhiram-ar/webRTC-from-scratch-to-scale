@@ -12,7 +12,7 @@
 - [SDP (Session description protocol)](#sdp-session-description-protocol)
 - [RTCPeerConnection object in browser](#rtcpeerconnection-object-in-browser)
 - [Multi client Architectures and Scaling WebRTC](#other-architectures-and-scaling-webrtc)
-  - [Limitations of P2P Architecture](#limitations-of-p2p-architecture-in-1m-mm-communication)
+  - [Limitations of P2P Architecture](#limitations-of-p2p-architecture)
   - [SFU (Selective Forwarding Unit)](#sfu-selective-forwarding-unit)
   - [MCU (Multipoint control Unit)](#mcu-multipoint-control-unit)
   - [Cloud Recording and live streming (Hydrid architecture)](#cloud-recording-and-live-streming-hydrid-architecture)
@@ -148,9 +148,11 @@ To do video call
 - call `addTrack` on `pc`
 - this would trigger an `onTrack` callback on the other side
 
+<br> <br>
+
 # Multi client Architectures and Scaling WebRTC
 
-## Limitations of P2P Architecture in 1:M, M:M communication
+### Limitations of P2P Architecture
 
 - P2P architecture is best for 1-1 video call/interactions.
 - for a group call or interaction between `n` peers (`n > 2`). It has some bottlenecks
