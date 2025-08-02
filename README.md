@@ -20,6 +20,7 @@
 - [Adhoc](#adhoc)
   - [Transcoding on the Fly](#transcoding-on-the-fly)
   - [Is SFU a TURN server](#is-sfu-a-turn-server)
+  - [High Quality stream recording - Riverside Architecture](#high-quality-stream-recording---riverside-architecture)
 
 # webRTC
 
