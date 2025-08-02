@@ -284,3 +284,11 @@ short answer NO
 TURN server is required in case of a browser cannot directly communicate with SFU server
 
 ![SFU with TURN server](./assets/SFU%20with%20TURN%20server.png)
+
+## High Quality stream recording - Riverside Architecture
+
+![riverside app architecture](./assets/riverside%20architecutre.png)
+
+- low latency video chunks - is send over UDP, these chunks wont be resent of one of the chunk (UDP - datagram) is missing
+- one other hand -> we need all the video frames to create the high quality recording.
+- High quality video is send over TCP - here if one of the frame went missing TCP resent the packet. Since lot of small packets can overwhelm the server. These packets are buffered and send to server
