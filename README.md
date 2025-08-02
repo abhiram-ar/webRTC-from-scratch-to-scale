@@ -144,9 +144,14 @@ This is just to establish a connection
 To do video call
 
 - we need to have mic/camera permission
+- set the `iceCandidates` of sender and reciver1
 - get audio and video `stream`
 - call `addTrack` on `pc`
 - this would trigger an `onTrack` callback on the other side
+
+> our first webRTC SDP exchnaged many not have any data/stream details in it,
+> we will be adding/removing tracks later on, and when we do chagne the track we need to let the other party know
+> to help with this we have `negotiationneeded` callback, which will do all the heavy lifting exchanging the updated SDP
 
 <br> <br>
 
@@ -214,6 +219,7 @@ problem:
 - there can be a cracking sound if we mix all the audio streams - because of noise and how it adds up
 
 fix:
+
 - So we limit the mix to have 3 loudest audio,
 - And we create 4 version of the mix,
   1.  audio mix of all 3 person speaking
@@ -228,9 +234,9 @@ fix:
 > - we don't want to send a pre-processed video stream with layout to the end user
 > - But incase of an audio we need to hear the person speaking even if they are not currently visible on the paginated video streams
 
-
 ## Cloud Recording and live streaming (hydrid architecture)
-- cloud recording -> meeting recording 
+
+- cloud recording -> meeting recording
 - live streaming -> boadcasting to the world live
 
 ![cloud recording architecture](./assets/mcu%20mixer%20and%20streming%20application.png)
@@ -271,6 +277,7 @@ why not transcode on the SFU?
 ## Is SFU a TURN server
 
 short answer NO
+
 - SFU runs application like mediasoup
 - TURN server uses turn protocol and runs something like `coTurn`
 
